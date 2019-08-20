@@ -1,11 +1,12 @@
-@startuml Sample1
+@startuml Sample2
 
-interface Print {
+abstract class Print {
     printWeak()
     printStrong()
 }
 
 class PrintBanner {
+    banner
     printWeak()
     printStrong()
 }
@@ -17,8 +18,8 @@ class Banner {
 
 Main --> Print : Uses
 
-Print <|- PrintBanner : implement
+Print <|- PrintBanner : extents
 
-PrintBanner -|> Banner : extents
+PrintBanner o-> Banner : has
 
 @enduml

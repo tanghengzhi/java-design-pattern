@@ -1,0 +1,1 @@
+![UML](/uml/Adapter/Sample2.png)
