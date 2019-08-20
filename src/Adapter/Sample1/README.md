@@ -1,0 +1,26 @@
+```plantuml
+@startuml Sample1
+
+interface Print {
+    printWeak()
+    printStrong()
+}
+
+class PrintBanner {
+    printWeak()
+    printStrong()
+}
+
+class Banner {
+    showWithParen()
+    showWithAster()
+}
+
+Main --> Print : Uses
+
+Print <|- PrintBanner : implement
+
+PrintBanner o-> Banner : extents
+
+@enduml
+```
