@@ -1,0 +1,34 @@
+@startuml Iterator
+
+package IteratorPattern {
+
+interface Iterator {
+    hasNext()
+    next()
+}
+
+interface Aggregate {
+    Iterator iterator()
+}
+
+class ConcreteAggregate {
+    Iterator iterator()
+}
+
+class ConcreteIterator {
+    Aggregate aggregate
+
+    hasNext()
+    next()
+}
+
+Aggregate -> Iterator : Creates
+
+Aggregate <|-- ConcreteAggregate : implement
+
+Iterator <|-- ConcreteIterator : implement
+
+ConcreteAggregate <-o ConcreteIterator
+}
+
+@enduml

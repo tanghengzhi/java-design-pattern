@@ -1,0 +1,45 @@
+@startuml A1
+
+interface Iterator {
+    hasNext()
+    next()
+}
+
+interface Aggregate {
+    Iterator iterator()
+}
+
+class Book {
+    String name
+
+    getName()
+}
+
+class BookShelf {
+    ArrayList books
+    
+    getBookAt()
+    appendBook()
+    getLength()
+    Iterator iterator()
+}
+
+class BookShelfIterator {
+    BookShelf bookShelf
+    int index
+
+    hasNext()
+    next()
+}
+
+Aggregate -> Iterator : Creates
+
+Aggregate <|-- BookShelf : implement
+
+Iterator <|-- BookShelfIterator : implement
+
+BookShelf <-o BookShelfIterator
+
+BookShelf o--> Book
+
+@enduml
